@@ -20,4 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'loginController@show');
 Route::get('/', 'tweetController@show');
-Route::post('/', 'tweetController@createTweet');
+Route::post('/create', 'tweetController@createTweet');
+Route::post('/edit', 'editTweetController@editTweet');
+Route::get('/delete/{id}', 'deleteTweetController@deleteTweet');

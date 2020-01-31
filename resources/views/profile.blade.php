@@ -10,10 +10,17 @@
 @foreach ($tweets as $tweet)
 <p> {{$tweet->content}}</p>
 <p><strong>{{$tweet->author}}</strong></p>
+
+@if(Auth::user()->name) {
+    <a href='/edit'> Edit </a>
+<a href='/delete/{{$tweet->id}}' > Delete </a>
+}
+@endif
 @endforeach
 
 
- <form action="/profile" method="POST">
+
+ <form action="/create" method="post">
      @csrf
      <input type="text" name="author" value="author">
      <br>

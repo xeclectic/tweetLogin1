@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class tweetController extends Controller
 {
@@ -12,7 +13,7 @@ class tweetController extends Controller
     }
 
     function createTweet(Request $request){
-        if(auth::check()) {
+        if(Auth::check()) {
             // $result = \App\tweet::find(4)
 
             $tweet = new \App\tweet;
